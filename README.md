@@ -20,3 +20,12 @@ The app is built using MERN stack, the flow of control can be described from the
 
 ![](https://github.com/iamdeepti/pink-diary/blob/master/demo.gif)
 
+### Installation 
+Clone/ Download the repo and then run the following commands 
+1) cd <path to directory> (pink-diary)
+2) npm -i
+3) cd client
+4) npm -i
+5) cd ..
+6) npm run dev
+
