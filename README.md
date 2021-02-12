@@ -12,6 +12,8 @@ Pink Diary is a personalised period tracking app which provides the following fu
 
 ### Design
 The app is built using MERN stack, the flow of control can be described from the following flow chart.
+
+
 ![](https://github.com/iamdeepti/pink-diary/blob/master/pink-diary-flowchart.png)
 
 ### Demo

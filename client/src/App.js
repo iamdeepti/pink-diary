@@ -27,6 +27,7 @@ export class App extends Component {
     state["startDate"] = getStartDate(state);
     this.setState(state);
   };
+  // for authentication
   componentDidMount() {
     axios.get("http://localhost:5000/api/auth/user").then((res) => {
       this.setState({
@@ -41,6 +42,7 @@ export class App extends Component {
 
   render() {
     const state = this.state;
+    // redirect on the basis of current page
     return (
       <div>
         <Navbar
@@ -50,28 +52,27 @@ export class App extends Component {
           state={this.state}
         />
         {/* if( this.state.user===null) */}
-        {this.state.user === null && this.state.currentPage==="login" &&(
+        {this.state.user === null && this.state.currentPage === "login" && (
           <LogIn
             setUser={this.setUser}
             handleChangeState={this.handleChangeState}
             state={this.state}
           />
         )}
-        {
-          this.state.currentPage === "signup" && (
-            <SignUp
-              setUser={this.setUser}
-              handleChangeState={this.handleChangeState}
-              state={this.state}
-            />)
-        }
-        {this.state.user!==null && state.currentPage === "Home" && (
+        {this.state.currentPage === "signup" && (
+          <SignUp
+            setUser={this.setUser}
+            handleChangeState={this.handleChangeState}
+            state={this.state}
+          />
+        )}
+        {this.state.user !== null && state.currentPage === "Home" && (
           <Home handleChangeState={this.handleChangeState} state={state} />
         )}
-        {this.state.user!==null && state.currentPage === "Add" && (
+        {this.state.user !== null && state.currentPage === "Add" && (
           <Add handleChangeState={this.handleChangeState} state={state} />
         )}
-		{this.state.user!==null && state.currentPage === "Help" && (
+        {this.state.user !== null && state.currentPage === "Help" && (
           <Help handleChangeState={this.handleChangeState} state={state} />
         )}
       </div>
